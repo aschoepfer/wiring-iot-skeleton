@@ -13,3 +13,6 @@
 [submodule "lib/mqtt-client"]
 	path = lib/mqtt-client
 	url = https://github.com/ERNICommunity/mqtt-client.git
+[submodule "lib/esp-gdbstub"]
+	path = lib/esp-gdbstub
+	url = https://github.com/ERNICommunity/esp-gdbstub.git

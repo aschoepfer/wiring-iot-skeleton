@@ -26,8 +26,10 @@
 #include <ProductDebug.h>
 #include <MqttClientController.h>
 #include <PubSubClientWrapper.h>
+#include <gdbstub.h>
 
 #define MQTT_SERVER  "iot.eclipse.org"
+#define DEBUG 0
 
 SerialCommand*        sCmd = 0;
 #ifdef ESP8266
@@ -53,6 +55,9 @@ void setup()
   //-----------------------------------------------------------------------------
   MqttClientController::Instance()->assignMqttClientWrapper(new PubSubClientWrapper(*(wifiClient), MQTT_SERVER));
 //  MqttClientController::Instance()->setShallConnect(true);
+#if DEBUG
+  gdbstub_init();
+#endif
 #endif
 }
 
